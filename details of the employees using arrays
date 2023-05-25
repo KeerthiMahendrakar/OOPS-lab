@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+class employee
+{
+	int number,basic;
+	
+	long DA,IT;
+	long netsalary,grosssalary;
+	char name[30];
+	public:
+	void read();
+	void display();
+	void calculate();
+};
+void employee::read()
+{
+	cout<<"enter employee id,name,&basic salary\n";
+	cin>>number>>name>>basic;
+}
+void employee::calculate()
+{
+	DA=(0.52)*basic;
+	grosssalary=DA+basic;
+	IT=(0.3)*grosssalary;
+	netsalary=basic+DA-IT;
+}
+void employee::display()
+{
+	cout<<number<<"\t"<<name<<"\t"<<basic<<"\t"<<DA<<"\t"<<IT<<"\t"<<grosssalary<<"\t"<<netsalary<<"\n";
+}
+int main()
+{
+	int n;
+	employee emp[n];
+	cout<<"enter no.of employee\n";
+	cin>>n;
+	
+	for(int i=0;i<n;i++)
+	{
+		emp[i].read();
+		emp[i].calculate();
+	}
+	cout<<"sl no. eid\t name\t\t basic salary\t\t DA\t\t gross salary\t income tax\t netsalary\n" ;
+	for(int i=0;i<n;i++)
+	{
+		
+		emp[i].display();
+	}
+	return 0;
+
+}
