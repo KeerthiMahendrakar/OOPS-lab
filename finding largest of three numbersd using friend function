@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class test
+{
+	int x,y,z;
+	public:
+	void input()
+	{
+		cout<<"enter three numbers";
+		cin>>x>>y>>z;
+	}
+	friend void find (test t);
+
+};
+void find (test t)
+{
+	if(t.x>t.y&&t.x>t.z)
+	cout<<"largest is:"<<t.x;
+	else if(t.y>t.z)
+	cout<<"largest is:"<<t.y;
+	else
+	cout<<"largest is:"<<t.z;
+}
+int main()
+{
+	test t1;
+	t1.input();
+	find(t1);
+	return 0;
+} 
